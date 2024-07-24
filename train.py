@@ -1,13 +1,14 @@
+import os
+import joblib # for saving the `queue` encoder
+from tqdm import tqdm
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, AdamW
 import torch
 
-import joblib # for saving the `queue` encoder
-from tqdm import tqdm
-
-df = pd.read_csv('ticket-helpdesk-multi-lang.csv')
+df = pd.read_csv(os.getcwd() + '/ticket-helpdesk-multi-lang.csv')
 
 # Preprocessing
 df['text'] = df['text'].str.lower()
