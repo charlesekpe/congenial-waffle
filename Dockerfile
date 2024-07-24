@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN train.py
+RUN python train.py
 
 # Second stage: Inference
 FROM python:3.9-slim
