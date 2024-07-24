@@ -1,5 +1,5 @@
 # First stage: Training
-FROM python:3.9-slim as train-stage
+FROM python:3.10.14-slim AS train-stage
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . .
 RUN python train.py
 
 # Second stage: Inference
-FROM python:3.9-slim
+FROM python:3.10.14-slim
 
 WORKDIR /app
 
